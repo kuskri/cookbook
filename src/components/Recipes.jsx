@@ -18,8 +18,9 @@ function Recipes(props) {
     <Box>
       <Heading marginTop={10}>{`${capitalizeFirstLetter(query)} Recipes`}</Heading>
       <Flex justifyContent="center">
+        {/* if the results are loading we visualize the spinner */}
         {loading && <Spinner />}
-
+        {/* when finished loading we visualize the recipes */}
         {!loading && (
           <Flex flexWrap="wrap" m={10} w="90%">
             {recipes !== [] &&
@@ -57,7 +58,7 @@ function Recipes(props) {
                           VIEW DETAILS
                         </Link>
                       </Button>
-
+                      {/* conditional rendering of the favorite icon button */}
                       {favoriteRecipesURI.includes(recipe.recipe.uri) ? (
                         <IconButton
                           aria-label="favorite"

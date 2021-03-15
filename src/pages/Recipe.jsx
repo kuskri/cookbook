@@ -63,23 +63,6 @@ function Recipe() {
             })}
           </Tbody>
         </Table>
-        {/* 
-        {location.state.recipe.ingredients.map((ingredient, key) => {
-          return (
-            <Box m="auto" key={uuidv4()}>
-              <Flex flexDir="row" w={500} h={50} m={10}>
-                {ingredient.image !== null ? (
-                  <Image boxSize={50} src={ingredient.image}></Image>
-                ) : (
-                  ""
-                )}
-                <Text verticalAlign="center" marginLeft={5}>
-                  {ingredient.text}
-                </Text>
-              </Flex>
-            </Box>
-          )
-        })} */}
         <Box m={5}>
           <Link href={location.state.recipe.url} w={300} fontWeight="semibold" isExternal>
             Get the recipe here

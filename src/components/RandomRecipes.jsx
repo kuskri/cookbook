@@ -17,8 +17,9 @@ function Recipes(props) {
     <Box>
       <Heading>Delicious Suggestions</Heading>
       <Flex justifyContent="center">
+        {/* if the results are loading we visualize the spinner */}
         {loadingRandom && <Spinner />}
-
+        {/* when finished loading we visualize the recipes */}
         {!loadingRandom && (
           <Flex flexWrap="wrap" m={10} w="90%">
             {randomRecipes !== [] &&
@@ -50,6 +51,7 @@ function Recipes(props) {
                           VIEW DETAILS
                         </Link>
                       </Button>
+                      {/* conditional rendering of the favorite icon button */}
                       {favoriteRecipesURI.includes(randomRecipe.recipe.uri) ? (
                         <IconButton
                           aria-label="favorite"

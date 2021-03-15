@@ -7,12 +7,17 @@ function SearchComponent(props) {
 
   const [input, setInput] = useState("")
 
+  //handling change
   const handleChange = (event) => {
     setInput(event.target.value)
   }
+
+  //handlign button click
   const handleClick = (event) => {
     setSearch(input)
   }
+
+  //calling the getRecipe function only when the query changes and setting the input to empty string
   useEffect(() => {
     getRecipe()
     setInput("")

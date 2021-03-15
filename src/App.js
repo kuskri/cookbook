@@ -13,8 +13,10 @@ import Favorites from "./pages/Favorites"
 const APP_ID = "f2f2fe85"
 const APP_KEY = "f586f28be41289f5aa3ce324d05c40b7	"
 
+//will fetch the reciper for RandomRecipes component
 const url = `https://api.edamam.com/search?q=random&app_id=${APP_ID}&app_key=${APP_KEY}`
 
+//saving to Lacal Storage
 const favoriteRecipesFromLocalStorage = JSON.parse(localStorage.getItem("favorites") || "[]")
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
     setQuery(search)
   }
 
+  //getting the recipes for the RandomRecipes Component
   const getRandomRecipes = async () => {
     try {
       setLoadingRandom(true)
@@ -71,6 +74,7 @@ function App() {
     }
   }
 
+  //adding to Favorites array
   const addToFavorites = (recipe) => {
     const alreadyToFavorites = favoriteRecipes.find(
       (prevRecipe) => prevRecipe.recipe.uri === recipe.recipe.uri
@@ -84,6 +88,7 @@ function App() {
     }
   }
 
+  //removing from Favorites array
   const removeFromFavorites = (recipe) => {
     const existsInFavorites = favoriteRecipes.find(
       (prevRecipe) => prevRecipe.recipe.uri === recipe.recipe.uri
